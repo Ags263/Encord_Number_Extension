@@ -1,9 +1,9 @@
-#esn-v043-overlay {
+#esn-v042-overlay {
   position: fixed !important; inset: 0 !important; pointer-events: none !important;
   overflow: visible !important; z-index: 2147483645 !important;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important;
 }
-#esn-v043-overlay .esn-num {
+#esn-v042-overlay .esn-num {
   position: absolute !important; transform: translateX(-50%) !important;
   display: flex !important; align-items: center !important; justify-content: center !important;
   min-width: 17px !important; height: 16px !important; padding: 1px 3px !important;
@@ -12,15 +12,15 @@
   box-sizing: border-box !important; box-shadow: 0 1px 4px #0005 !important;
   white-space: nowrap !important; user-select: none !important; pointer-events: none !important;
 }
-#esn-v043-overlay .esn-num.esn-compact { font-size: 9px !important; min-width: 14px !important; height: 13px !important; padding: 0 2px !important; }
-#esn-v043-overlay .esn-guide {
+#esn-v042-overlay .esn-num.esn-compact { font-size: 9px !important; min-width: 14px !important; height: 13px !important; padding: 0 2px !important; }
+#esn-v042-overlay .esn-guide {
   position: fixed !important; bottom: 100px !important; right: 18px !important;
   background: #37216f !important; color: #fff !important; padding: 10px 14px !important;
   font: 600 13px/1.45 system-ui, sans-serif !important; border-radius: 8px !important;
   box-shadow: 0 4px 16px #0005 !important; max-width: 380px !important;
 }
 
-#esn-v043-overlay .esn-leader {
+#esn-v042-overlay .esn-leader {
   position: absolute !important; height: 1px !important;
   background: #7952b3 !important; transform-origin: left center !important;
   pointer-events: none !important; opacity: .65 !important;
@@ -28,10 +28,4 @@
 
 /* Suppress overlays left by an older content script in this tab. */
 #esn-v3-overlay { display: none !important; }
-#esn-v043-overlay .esn-num { top: 0 !important; margin: 0 !important; }
-
-#esn-v042-overlay { display:none !important; }
-#esn-v043-overlay .esn-issue { position:absolute !important; pointer-events:none !important; box-sizing:border-box !important; border:2px solid #d40020 !important; }
-#esn-v043-overlay .esn-blank { background:rgba(255,0,40,.17) !important; }
-#esn-v043-overlay .esn-gap { background:repeating-linear-gradient(135deg,rgba(220,0,30,.25) 0px,rgba(220,0,30,.25) 3px,rgba(255,255,255,.12) 3px,rgba(255,255,255,.12) 7px) !important; }
-#esn-v043-overlay .esn-num.esn-blank-num { background:#c40020 !important; }
+#esn-v042-overlay .esn-num { top: 0 !important; margin: 0 !important; }
