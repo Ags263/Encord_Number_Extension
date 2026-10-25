@@ -9,7 +9,7 @@
 <body>
   <header>
     <strong>Encord Segment Numbers</strong>
-    <small>Version 0.4.2 · Single-line numbers</small>
+    <small>Version 0.4.3 · Blank captions and gaps</small>
   </header>
   <section class="summary" aria-live="polite">
     <span>CONNECTION STATUS</span>
@@ -20,6 +20,11 @@
   <button id="connect" class="primary">↻ Connect to this Encord tab</button>
   <label class="option"><input id="enabled" type="checkbox" checked> Show segment numbers</label>
   <label class="option"><input id="compact" type="checkbox" checked> Compact labels (40+ segments)</label>
+  <label class="option"><input id="highlights" type="checkbox" checked> Highlight blank captions and gaps in red</label>
+  <label class="option">Range ends <select id="endMode"><option value="inclusive">Inclusive frame ends</option><option value="exclusive">Exclusive range ends</option></select></label>
+  <p id="issues" role="status"></p>
+  <ul id="issue-details"></ul>
+  <p>Red segment border and number = blank caption. Red hatched space = possible gap; review it. NU, ID and DO are not blank captions.</p>
   <button id="refresh" class="secondary">Detect segments again</button>
   <p class="footer">Numbers are chronological ranks among unique ranges currently rendered in the page. If Encord removes off-screen ranges, ranks can change. A full-task total is not verified. This overlay does not edit annotations or send data anywhere.</p>
   <script src="popup.js"></script>

@@ -17,6 +17,13 @@ function show(state) {
   $('status').textContent = state.reason || 'Connected, scanning timeline';
   $('enabled').checked = !!state.enabled;
   $('compact').checked = !!state.compact;
+  $('highlights').checked = state.highlights!==false;
+  $('endMode').value=state.endMode||'inclusive';
+  $('issues').textContent=`Blank captions: ${(state.blanks||[]).length}. Possible gaps: ${(state.gaps||[]).length}. Caption text unavailable: ${state.unavailable||0}.`;
+  const details=$('issue-details');details.replaceChildren();
+  for(const n of state.blanks||[]) {const li=document.createElement('li');li.textContent=`Segment ${n}: blank caption`;details.append(li);}
+  for(const g of state.gaps||[]) {const li=document.createElement('li');li.textContent=`Between segments ${g.before} and ${g.after}: possible gap ${g.start}–${g.end} (${g.size} range units). Needs review.`;details.append(li);}
+
 
 }
 async function script(options) {
@@ -46,13 +53,13 @@ async function connect() {
   if (tab.url && !allow(tab.url)) throw new Error('Open an https://app.encord.com label-editor task, then click Connect.');
   tabId = tab.id;
   await css();
-  await script({files:['content.js']});
+  await script({files:['issues.js','content.js']});
   return state('ESN_REFRESH');
 }
 async function state(type, settings = {}) {
   if (tabId === null) return connect();
   const frames = await script({func: ({type,settings}) => {
-    const app = window.__ESN_V042__;
+    const app = window.__ESN_V043__;
     if (!app) return null;
     return app.command({type,settings});
   },args:[{type,settings}]});
@@ -70,4 +77,6 @@ $('connect').addEventListener('click',()=>action(connect));
 $('refresh').addEventListener('click',()=>action(()=>state('ESN_REFRESH')));
 $('enabled').addEventListener('change',()=>action(()=>state('ESN_CONFIG',{enabled:$('enabled').checked})));
 $('compact').addEventListener('change',()=>action(()=>state('ESN_CONFIG',{compact:$('compact').checked})));
+$('highlights').addEventListener('change',()=>action(()=>state('ESN_CONFIG',{highlights:$('highlights').checked})));
+$('endMode').addEventListener('change',()=>action(()=>state('ESN_CONFIG',{endMode:$('endMode').value})));
 action(connect);

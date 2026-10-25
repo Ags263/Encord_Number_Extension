@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Encord Segment Numbers",
-  "version": "0.4.2",
-  "description": "Numbers exact Detailed Caption range bars by their start/end attributes. Page-rendered count; full total unverified.",
+  "version": "0.4.3",
+  "description": "Single-line segment numbers, red blank-caption highlights and possible gap markers on the Detailed Caption timeline.",
   "permissions": [
     "storage",
     "scripting",
@@ -17,6 +17,7 @@
         "https://app.encord.com/*"
       ],
       "js": [
+        "issues.js",
         "content.js"
       ],
       "css": [
