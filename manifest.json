@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Encord Segment Numbers",
+  "version": "0.4.2",
+  "description": "Numbers exact Detailed Caption range bars by their start/end attributes. Page-rendered count; full total unverified.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://app.encord.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.encord.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "overlay.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Encord Segment Numbers",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

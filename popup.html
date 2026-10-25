@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Encord Segment Numbers</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <strong>Encord Segment Numbers</strong>
+    <small>Version 0.4.2 · Single-line numbers</small>
+  </header>
+  <section class="summary" aria-live="polite">
+    <span>CONNECTION STATUS</span>
+    <div id="connection" class="conn">Connecting…</div>
+    <div class="count-line"><span>Ranges in page (total unverified)</span><strong id="count">—</strong></div>
+    <p id="status">Checking the active Encord page…</p>
+  </section>
+  <button id="connect" class="primary">↻ Connect to this Encord tab</button>
+  <label class="option"><input id="enabled" type="checkbox" checked> Show segment numbers</label>
+  <label class="option"><input id="compact" type="checkbox" checked> Compact labels (40+ segments)</label>
+  <button id="refresh" class="secondary">Detect segments again</button>
+  <p class="footer">Numbers are chronological ranks among unique ranges currently rendered in the page. If Encord removes off-screen ranges, ranks can change. A full-task total is not verified. This overlay does not edit annotations or send data anywhere.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

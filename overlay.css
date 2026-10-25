@@ -1,0 +1,31 @@
+#esn-v042-overlay {
+  position: fixed !important; inset: 0 !important; pointer-events: none !important;
+  overflow: visible !important; z-index: 2147483645 !important;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+#esn-v042-overlay .esn-num {
+  position: absolute !important; transform: translateX(-50%) !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  min-width: 17px !important; height: 16px !important; padding: 1px 3px !important;
+  font: 700 10px/1 system-ui, sans-serif !important; color: white !important;
+  background: #4c26aa !important; border: 1px solid #fff !important; border-radius: 4px !important;
+  box-sizing: border-box !important; box-shadow: 0 1px 4px #0005 !important;
+  white-space: nowrap !important; user-select: none !important; pointer-events: none !important;
+}
+#esn-v042-overlay .esn-num.esn-compact { font-size: 9px !important; min-width: 14px !important; height: 13px !important; padding: 0 2px !important; }
+#esn-v042-overlay .esn-guide {
+  position: fixed !important; bottom: 100px !important; right: 18px !important;
+  background: #37216f !important; color: #fff !important; padding: 10px 14px !important;
+  font: 600 13px/1.45 system-ui, sans-serif !important; border-radius: 8px !important;
+  box-shadow: 0 4px 16px #0005 !important; max-width: 380px !important;
+}
+
+#esn-v042-overlay .esn-leader {
+  position: absolute !important; height: 1px !important;
+  background: #7952b3 !important; transform-origin: left center !important;
+  pointer-events: none !important; opacity: .65 !important;
+}
+
+/* Suppress overlays left by an older content script in this tab. */
+#esn-v3-overlay { display: none !important; }
+#esn-v042-overlay .esn-num { top: 0 !important; margin: 0 !important; }
